@@ -103,9 +103,9 @@ npm_config_registry=https://registry.npmjs.org /opt/homebrew/bin/npm publish --a
 
 自动流程会执行：
 
-1. checkout 仓库
+1. checkout 仓库（`actions/checkout@v6`）
 2. 安装 Bun
-3. 安装 Node.js 22
+3. 安装 Node.js 24（`actions/setup-node@v6`）
 4. `bun install --frozen-lockfile`
 5. `bun run build`
 6. `bun test`
