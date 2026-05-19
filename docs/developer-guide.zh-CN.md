@@ -65,7 +65,7 @@
 
 如果 Trusted Publisher 尚未绑定，GitHub Actions 会在 `npm publish` 阶段失败。这是发布配置问题，不是代码问题。
 
-当前仓库已经手动完成首个版本 `0.1.0` 的发布，后续版本建议全部走 Trusted Publishing 自动发布。
+当前仓库已经手动完成首个版本 `0.1.0` 的发布，`0.1.2` 已经验证通过 GitHub Release + Trusted Publishing 自动发布，后续版本建议全部沿用这套流程。
 
 ## 手工配置 Trusted Publisher
 
@@ -113,12 +113,16 @@ npm_config_registry=https://registry.npmjs.org /opt/homebrew/bin/npm publish --a
 8. 校验 Release tag 与 `package.json.version` 一致
 9. `npm publish --access public`
 
+已验证成功的自动发布版本：
+
+- `v0.1.2` -> `@caijinglong/pdf-compress@0.1.2`
+
 ## 推荐发版步骤
 
 1. 更新 `package.json.version`
 2. 运行本地构建、测试和类型检查
 3. 提交代码并推送到 GitHub
-4. 在 GitHub 创建对应版本的 Release，例如 `v0.1.1`
+4. 在 GitHub 创建对应版本的 Release，例如 `v0.1.3`
 5. 点击发布 Release
 6. 等待 GitHub Actions 自动完成 npm 发布
 
@@ -135,6 +139,7 @@ npm_config_registry=https://registry.npmjs.org /opt/homebrew/bin/npm publish --a
 
 - 回到 npm 后台检查 Trusted Publisher 是否已配置
 - 确认仓库名和 workflow 文件路径完全匹配
+- 如果曾经失败过，在修正配置后建议直接创建新的版本 release，不要依赖旧 release 的失败记录来判断当前配置状态
 
 ### Release tag 与版本不一致
 
