@@ -43,9 +43,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caijinglong/pdf-compress.git"
+    "url": "git+https://github.com/CaiJingLong/pdf-compress.git"
   },
-  "homepage": "https://github.com/caijinglong/pdf-compress",
+  "homepage": "https://github.com/CaiJingLong/pdf-compress",
   "dependencies": {
     "@napi-rs/canvas": "^0.1.65",
     "pdf-lib": "^1.17.1"
