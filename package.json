@@ -1,0 +1,55 @@
+{
+  "name": "@caijinglong/pdf-compress",
+  "version": "0.1.0",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/node.d.ts",
+      "browser": "./dist/browser.js",
+      "default": "./dist/node.js"
+    },
+    "./browser": {
+      "types": "./dist/browser.d.ts",
+      "default": "./dist/browser.js"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "default": "./dist/node.js"
+    }
+  },
+  "unpkg": "./dist/pdf-compress.global.js",
+  "jsdelivr": "./dist/pdf-compress.global.js",
+  "scripts": {
+    "build:esm": "tsup",
+    "build:global": "node scripts/build-global.mjs",
+    "build": "bun run build:esm && bun run build:global",
+    "serve": "serve -l 4884 .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "pdf",
+    "compress",
+    "browser",
+    "nodejs",
+    "pdf-lib"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.65",
+    "pdf-lib": "^1.17.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.2",
+    "esbuild": "^0.25.4",
+    "serve": "^14.2.6",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}
