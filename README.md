@@ -87,6 +87,11 @@ const result = await window.PdfCompress.compressPdf(file, {
 import { compressPdf } from 'https://esm.sh/@caijinglong/pdf-compress/browser';
 ```
 
+## Documentation
+
+- Chinese README: [README.zh-CN.md](./README.zh-CN.md)
+- Developer Guide: [docs/developer-guide.zh-CN.md](./docs/developer-guide.zh-CN.md)
+
 ## Examples
 
 - Browser global example: [examples/browser-global/index.html](/Users/cai/code/web/pdf-compress/examples/browser-global/index.html:1)

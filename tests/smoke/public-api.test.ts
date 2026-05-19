@@ -34,6 +34,26 @@ describe('public api', () => {
     expect(readme).toContain('examples/browser-esm');
   });
 
+  it('links the Chinese README and developer guide from the English README', () => {
+    const readme = readFileSync(join(process.cwd(), 'README.md'), 'utf8');
+
+    expect(readme).toContain('README.zh-CN.md');
+    expect(readme).toContain('docs/developer-guide.zh-CN.md');
+  });
+
+  it('documents trusted publishing constraints for maintainers', () => {
+    const developerGuide = readFileSync(
+      join(process.cwd(), 'docs', 'developer-guide.zh-CN.md'),
+      'utf8',
+    );
+
+    expect(developerGuide).toContain('Trusted Publisher');
+    expect(developerGuide).toContain('GitHub-hosted runner');
+    expect(developerGuide).toContain('id-token: write');
+    expect(developerGuide).toContain('GitHub Release');
+    expect(developerGuide).toContain('npm publish --access public');
+  });
+
   it('removes internal-only demo files from the publishable project layout', () => {
     const removedPaths = [
       'test-modules.html',
